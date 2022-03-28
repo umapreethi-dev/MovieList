@@ -1,22 +1,30 @@
 .movies {
   display: flex;
+  flex-wrap: wrap;
 }
 .movie {
   flex:1;
 }
 .card {
-  max-width: 300px;
+  max-width: 400px;
   border: 1px solid #eee;
   padding: 10px;
   margin: 10px;
   border-radius: 5px;
-  flex:1;
+  
 }
 
 .poster {
-  width: 300px;
+  width: 400px;
   height: 400px;
   object-fit: cover;
+}
+.title-container {
+  display: flex;
+  justify-content: space-between;
+}
+.icons-container {
+  display: flex;
 }
 
 @media (max-width: 768px) { /*breakpoint*/
