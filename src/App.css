@@ -6,11 +6,9 @@
   flex:1;
 }
 .card {
-  max-width: 400px;
-  border: 1px solid #eee;
-  padding: 10px;
+  
   margin: 10px;
-  border-radius: 5px;
+ 
   
 }
 
@@ -31,4 +29,15 @@
   .movies {
     flex-direction: column;
   }
+}
+
+.nav-link {
+  text-decoration: none;
+  color:#fff;
+}
+
+.form {
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
 }
