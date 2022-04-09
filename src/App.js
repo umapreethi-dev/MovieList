@@ -13,7 +13,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 
 function App() {
-  const [movieList, setMovielist] = useState(data);
+  const [movieList, setMovielist] = useState([]);
   const [mode, setMode] = useState("dark");
   const theme = createTheme({
     palette: {
@@ -36,7 +36,7 @@ function App() {
           />
           <Route
             path="/movies/:id"
-            element={<MovieDetails movieList={movieList} />}
+            element={<MovieDetails />}
           />
           <Route
             path="/addmovie"
