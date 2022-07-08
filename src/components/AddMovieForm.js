@@ -21,7 +21,7 @@ export default function AddMovieForm({movieList, setMovielist}) {
     poster: poster,
     trailer: trailer,
   };
-  //console.log(mo)
+  
   return (
     <div>
       <div className="form">
@@ -37,8 +37,18 @@ export default function AddMovieForm({movieList, setMovielist}) {
      onChange={(event) => setTrailer(event.target.value)} />
         <Button variant="contained"
         onClick={() => {
-          setMovielist([...movieList, newMovie]);
-          navigate("/movieList")
+          //setMovielist([...movieList, newMovie]);
+          fetch("https://624e522677abd9e37c85941d.mockapi.io/movies",
+           {
+            method: "POST",
+            body: JSON.stringify(newMovie),
+            headers: {
+              "Content-Type": "application/json",
+            },
+           })
+          .then((data) => data.json())
+          .then(() => navigate("/movieList"));
+          
         }}
         >Add Movie</Button>
 

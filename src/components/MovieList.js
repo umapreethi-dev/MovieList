@@ -4,8 +4,10 @@ import Movie from "./Movie.js";
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from "@mui/material/IconButton";
 import EditIcon from '@mui/icons-material/Edit';
+import { useNavigate } from "react-router-dom";
 
 export default function MovieList( {movieList, setMovielist} ){
+  const navigate = useNavigate();
     const getMovies = () => {
       fetch("https://624e522677abd9e37c85941d.mockapi.io/movies")
       .then(data => data.json())
@@ -22,6 +24,7 @@ export default function MovieList( {movieList, setMovielist} ){
       .then(()=> getMovies());
 
     }
+    
     const movies = movieList.map((item,index) => {
       return (
         <Movie
@@ -42,7 +45,7 @@ export default function MovieList( {movieList, setMovielist} ){
          editButton={<IconButton
           color="primary"
           aria-label="expandicon"
-          
+          onClick = {() => navigate(`/movies/edit/${item.id}`)}
         >
           <EditIcon />
         </IconButton>

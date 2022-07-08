@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import MovieList from "./components/MovieList";
 import AddMovieForm from "./components/AddMovieForm";
 import MovieDetails from "./components/MovieDetails";
+import EditMovie from "./components/EditMovie";
 import NotFoundPage from "./components/NotFoundPage";
 import { Route, Routes, Navigate } from "react-router-dom";
 import data from "./components/data";
@@ -42,6 +43,12 @@ function App() {
             path="/addmovie"
             element={
               <AddMovieForm movieList={movieList} setMovielist={setMovielist} />
+            }
+          />
+          <Route
+            path="/movies/edit/:id"
+            element={
+              <EditMovie movieList={movieList} setMovielist={setMovielist} />
             }
           />
           <Route path="/404" element={<NotFoundPage />} />
